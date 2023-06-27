@@ -17,8 +17,9 @@ Dica: O aluno pode implementar algoritmos de busca e reserva eficientes. Os alun
 Descrição: Peça aos alunos para criarem um sistema de reservas de voos. O sistema deve permitir que os usuários pesquisem voos disponíveis com base em critérios como origem, destino e data. Os usuários devem poder selecionar um voo e fazer uma reserva, informando seus dados pessoais. O sistema deve garantir que não haja conflito de reservas para o mesmo voo.
 Dica: O aluno pode implementar algoritmos de busca e reserva eficientes. Os alunos podem usar estruturas de dados avançadas, como grafos, para representar as rotas de voo.
 
+# Considerem esses requisitos e essas especificações ao desenvolverem os sistemas 
 
-Sistema de Cadastro de Alunos:
+## Sistema de Cadastro de Alunos:
 
 1. Funcionalidades básicas:
    - O sistema deve permitir o cadastro de novos alunos, solicitando as seguintes informações: nome, idade, gênero e curso.
@@ -40,7 +41,6 @@ Sistema de Cadastro de Alunos:
    - O sistema deve fornecer uma interface de usuário amigável, permitindo que o usuário interaja com as funcionalidades por meio de um menu intuitivo.
    - As opções do menu devem ser claras e bem organizadas, facilitando a navegação e utilização do sistema.
 
-# Considerem esses requisitos e essas especificações ao desenvolverem os sistemas 
 
 ## Agenda de Compromissos:
 
