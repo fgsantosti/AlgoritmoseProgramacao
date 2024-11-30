@@ -1,119 +1,306 @@
+Aqui está um conteúdo abrangente para introduzir **Algoritmos e Programação em C**, utilizando exemplos práticos e simples que simulam a utilização em uma placa como a Raspberry Pi Pico ou Arduino. Os tópicos incluem explicações seguidas de exemplos comentados.
 
-# Problemas Prova Final 2023-1
+---
 
-## 1. Problema: Sistema de Cadastro de Alunos
-Descrição: Peça aos alunos para criarem um sistema de cadastro de alunos. O sistema deve permitir que o usuário adicione, visualize, edite e remova alunos da lista. Cada aluno deve ter informações como nome, idade e nota. O sistema deve fornecer um menu de opções para o usuário interagir com as funcionalidades.
-Dica: Os alunos podem usar estruturas de dados como listas ou dicionários para armazenar as informações dos alunos.
+### **1. Introdução a Algoritmos e Programação**
+#### O que é um Algoritmo?
+Um **algoritmo** é uma sequência de passos lógicos para resolver um problema. Ele pode ser representado por pseudocódigo, fluxograma ou diretamente em uma linguagem de programação, como C.
 
-## 2. Problema: Agenda de Compromissos
-Descrição: Peça aos alunos para criarem uma agenda de compromissos. O sistema deve permitir que o usuário adicione, visualize, edite e remova compromissos da agenda. Cada compromisso deve ter informações como data, hora e descrição. O sistema também deve fornecer funcionalidades para o usuário visualizar os compromissos de um determinado dia ou período.
-Dica: Os alunos podem usar estruturas de dados como listas ou dicionários para armazenar os compromissos e implementar a lógica de filtragem por datas.
+#### Primeiro Programa em C
+O famoso exemplo "Hello World":
+```c
+#include <stdio.h>  // Biblioteca padrão para entrada e saída
 
-## 3. Problema: Sistema de Gestão de Estoque e Vendas
-Descrição: Peça aos alunos para criarem um sistema de gestão de estoque e vendas para uma loja. O sistema deve permitir que os usuários cadastrem produtos, atualizem informações de estoque, registrem vendas e gerem relatórios de vendas. Os usuários devem poder pesquisar produtos por nome, verificar a disponibilidade de estoque e registrar vendas com base nas quantidades disponíveis. O sistema deve também atualizar automaticamente o estoque após cada venda.
-Dica: O aluno pode implementar algoritmos de busca e reserva eficientes. Os alunos podem usar estruturas de dados como árvores binárias de busca para organizar os produtos e implementar algoritmos eficientes para a atualização do estoque e a geração de relatórios.
+int main() {
+    printf("Hello, World!\n");  // Exibe a mensagem na tela
+    return 0;  // Indica que o programa terminou com sucesso
+}
+```
 
-## 4. Problema: Sistema de Reservas de Voo
-Descrição: Peça aos alunos para criarem um sistema de reservas de voos. O sistema deve permitir que os usuários pesquisem voos disponíveis com base em critérios como origem, destino e data. Os usuários devem poder selecionar um voo e fazer uma reserva, informando seus dados pessoais. O sistema deve garantir que não haja conflito de reservas para o mesmo voo.
-Dica: O aluno pode implementar algoritmos de busca e reserva eficientes. Os alunos podem usar estruturas de dados avançadas, como grafos, para representar as rotas de voo.
+#### Simulação em Hardware
+Imagine que estamos acendendo um LED para indicar "Hello World":
+```c
+#include <stdio.h>
 
-# Considerem esses requisitos e essas especificações ao desenvolverem os sistemas 
+int main() {
+    printf("Acendendo um LED para dizer Hello World!\n");
+    // Simulação: LED ligado
+    printf("LED está ligado!\n");
+    return 0;
+}
+```
 
-## Sistema de Cadastro de Alunos:
+---
 
-1. Funcionalidades básicas:
-   - O sistema deve permitir o cadastro de novos alunos, solicitando as seguintes informações: nome, idade, gênero e curso.
-   - O sistema deve ser capaz de exibir a lista de alunos cadastrados, mostrando todas as informações de cada aluno.
-   - O sistema deve permitir a edição dos dados de um aluno, como idade, gênero ou curso.
-   - O sistema deve permitir a remoção de um aluno da lista de cadastro.
-   - O sistema deve ser capaz de buscar um aluno pelo nome e exibir suas informações.
+### **2. Operadores Aritméticos**
+#### Explicação
+Os operadores aritméticos em C incluem:
+- `+` (adição), `-` (subtração), `*` (multiplicação), `/` (divisão), `%` (resto da divisão).
 
-2. Validações:
-   - O sistema deve realizar validações para garantir que informações obrigatórias, como nome e idade, sejam fornecidas durante o cadastro e edição dos alunos.
-   - O sistema deve validar a idade dos alunos, permitindo apenas valores válidos (por exemplo, idade não pode ser negativa).
-   - O sistema deve lidar com possíveis erros de busca, informando ao usuário caso o aluno não seja encontrado.
+#### Exemplo: Cálculo de média
+```c
+#include <stdio.h>
 
-3. Persistência de dados:
-   - O sistema deve ser capaz de armazenar os dados dos alunos de forma persistente, para que os registros não sejam perdidos após o encerramento do programa.
-   - Os alunos podem optar por usar arquivos para armazenar os dados em disco ou uma abordagem de banco de dados simples (como SQLite).
+int main() {
+    float nota1 = 8.5, nota2 = 7.0, media;
+    
+    // Calcula a média
+    media = (nota1 + nota2) / 2;
+    
+    printf("A média das notas é: %.2f\n", media);  // Exibe o resultado
+    return 0;
+}
+```
 
-4. Interface de usuário:
-   - O sistema deve fornecer uma interface de usuário amigável, permitindo que o usuário interaja com as funcionalidades por meio de um menu intuitivo.
-   - As opções do menu devem ser claras e bem organizadas, facilitando a navegação e utilização do sistema.
+#### Simulação em Hardware
+Controlando a intensidade de um LED com um valor médio:
+```c
+#include <stdio.h>
 
+int main() {
+    int brilho1 = 50;  // Intensidade do LED 1 (0 a 100)
+    int brilho2 = 80;  // Intensidade do LED 2
+    int brilho_medio;
+    
+    brilho_medio = (brilho1 + brilho2) / 2;  // Calcula o brilho médio
+    printf("Brilho médio do LED: %d\n", brilho_medio);
+    return 0;
+}
+```
 
-## Agenda de Compromissos:
+---
 
-1. Funcionalidades básicas:
-   - O sistema deve permitir o cadastro de compromissos, solicitando as seguintes informações: data, hora, descrição e duração.
-   - O sistema deve ser capaz de exibir a lista de compromissos cadastrados, mostrando todas as informações de cada compromisso.
-   - O sistema deve permitir a edição dos dados de um compromisso, como data, hora, descrição ou duração.
-   - O sistema deve permitir a remoção de um compromisso da agenda.
-   - O sistema deve ser capaz de filtrar os compromissos com base em uma data específica ou em um intervalo de datas.
-   - O sistema deve fornecer uma funcionalidade para verificar os compromissos de um determinado dia e exibi-los em ordem cronológica.
+### **3. Operadores de Comparação**
+#### Explicação
+Comparam valores e retornam `1` (verdadeiro) ou `0` (falso):
+- `==` (igual), `!=` (diferente), `<`, `>`, `<=`, `>=`.
 
-2. Validações:
-   - O sistema deve realizar validações para garantir que informações obrigatórias, como data e hora, sejam fornecidas durante o cadastro e edição dos compromissos.
-   - O sistema deve validar a consistência dos dados, como verificar se a hora do compromisso não entra em conflito com outros compromissos já cadastrados.
+#### Exemplo: Comparação de números
+```c
+#include <stdio.h>
 
-3. Persistência de dados:
-   - O sistema deve ser capaz de armazenar os dados dos compromissos de forma persistente, para que os registros não sejam perdidos após o encerramento do programa.
-   - Os alunos podem optar por usar arquivos para armazenar os dados em disco ou uma abordagem de banco de dados simples (como SQLite).
+int main() {
+    int a = 5, b = 10;
+    
+    if (a < b) {
+        printf("A é menor que B\n");
+    } else {
+        printf("A não é menor que B\n");
+    }
+    return 0;
+}
+```
 
-4. Interface de usuário:
-   - O sistema deve fornecer uma interface de usuário intuitiva, permitindo que o usuário interaja com as funcionalidades por meio de um menu ou comandos claros.
-   - O sistema deve apresentar as informações de forma organizada, facilitando a visualização dos compromissos.
+#### Simulação em Hardware
+Verificar se um botão foi pressionado:
+```c
+#include <stdio.h>
 
-## Sistema de Gestão de Estoque e Vendas:
+int main() {
+    int botao_pressionado = 1;  // 1 significa que o botão foi pressionado
+    
+    if (botao_pressionado == 1) {
+        printf("O botão foi pressionado, acendendo o LED!\n");
+    } else {
+        printf("O botão não foi pressionado.\n");
+    }
+    return 0;
+}
+```
 
-1. Funcionalidades básicas:
-   - O sistema deve permitir o cadastro de produtos, solicitando as seguintes informações: nome, código, quantidade em estoque e preço.
-   - O sistema deve ser capaz de exibir a lista de produtos cadastrados, mostrando todas as informações de cada produto.
-   - O sistema deve permitir a edição dos dados de um produto, como quantidade em estoque ou preço.
-   - O sistema deve permitir a remoção de um produto do estoque.
-   - O sistema deve ser capaz de registrar vendas, solicitando as seguintes informações: código do produto e quantidade vendida.
-   - O sistema deve atualizar automaticamente a quantidade em estoque após cada venda.
+---
 
-2. Validações:
-   - O sistema deve realizar validações para garantir que informações obrigatórias, como nome, código e quantidade em estoque, sejam fornecidas durante o cadastro e edição dos produtos.
-   - O sistema deve validar a disponibilidade de estoque durante a realização de vendas, verificando se há quantidade suficiente para atender à demanda.
+### **4. Operadores Lógicos**
+#### Explicação
+Combinam expressões:
+- `&&` (e lógico), `||` (ou lógico), `!` (não lógico).
 
-3. Relatórios:
-   - O sistema deve ser capaz de gerar relatórios de vendas, mostrando informações como produtos vendidos, quantidades vendidas e valores totais.
-   - O sistema deve permitir a filtragem dos relatórios por data, para que o usuário possa visualizar as vendas em um determinado período.
+#### Exemplo: Controle de acesso
+```c
+#include <stdio.h>
 
-4. Persistência de dados:
-   - O sistema deve ser capaz de armazenar os dados dos produtos e das vendas de forma persistente, para que os registros não sejam perdidos após o encerramento do programa.
-   - Os alunos podem optar por usar arquivos para armazenar os dados em disco ou uma abordagem de banco de dados simples (como SQLite).
+int main() {
+    int senha = 1234, entrada;
+    printf("Digite a senha: ");
+    scanf("%d", &entrada);
+    
+    if (entrada == senha) {
+        printf("Acesso permitido!\n");
+    } else {
+        printf("Senha incorreta.\n");
+    }
+    return 0;
+}
+```
 
-5. Interface de usuário:
-   - O sistema deve fornecer uma interface de usuário intuitiva, permitindo que o usuário interaja com as funcionalidades por meio de um menu ou comandos claros.
-   - O sistema deve apresentar as informações de forma organizada, facilitando a visualização dos produtos, vendas e relatórios.
+#### Simulação em Hardware
+Acender o LED apenas se dois botões forem pressionados:
+```c
+#include <stdio.h>
 
-## Sistema de Reservas de Voo:
+int main() {
+    int botao1 = 1, botao2 = 0;  // 1 = pressionado, 0 = não pressionado
+    
+    if (botao1 == 1 && botao2 == 1) {
+        printf("Ambos os botões foram pressionados. LED aceso!\n");
+    } else {
+        printf("Os dois botões não estão pressionados.\n");
+    }
+    return 0;
+}
+```
 
-1. Funcionalidades básicas:
-   - O sistema deve permitir que os usuários pesquisem voos disponíveis com base em critérios como origem, destino e data.
-   - O sistema deve exibir os voos disponíveis, mostrando informações como número do voo, origem, destino, horário de partida e horário de chegada.
-   - O sistema deve permitir que os usuários selecionem um voo e façam uma reserva, fornecendo informações pessoais, como nome, número de passaporte ou documento de identificação.
-   - O sistema deve garantir que não haja conflito de reservas para o mesmo voo, ou seja, não pode haver duas reservas para o mesmo assento em um determinado voo.
+---
 
-2. Validações:
-   - O sistema deve realizar validações para garantir que informações obrigatórias, como origem, destino e data, sejam fornecidas durante a pesquisa de voos e a reserva.
-   - O sistema deve verificar a disponibilidade de assentos no voo selecionado antes de permitir a reserva.
-   - O sistema deve lidar com possíveis erros de reserva, como informar ao usuário caso o assento já esteja ocupado.
+### **5. Estruturas Condicionais**
+#### Explicação
+Permitem executar partes diferentes do código com base em condições.
 
-3. Persistência de dados:
-   - O sistema deve ser capaz de armazenar os dados dos voos e das reservas de forma persistente, para que os registros não sejam perdidos após o encerramento do programa.
-   - Os alunos podem optar por usar arquivos para armazenar os dados em disco ou uma abordagem de banco de dados simples (como SQLite).
+#### Exemplo: Verificar temperatura
+```c
+#include <stdio.h>
 
-4. Interface de usuário:
-   - O sistema deve fornecer uma interface de usuário intuitiva, permitindo que o usuário interaja com as funcionalidades por meio de um menu ou comandos claros.
-   - O sistema deve apresentar as informações de forma organizada, facilitando a visualização dos voos, disponibilidade de assentos e informações de reserva.
+int main() {
+    int temperatura = 30;
 
+    if (temperatura > 25) {
+        printf("Está quente!\n");
+    } else {
+        printf("Está frio!\n");
+    }
+    return 0;
+}
+```
 
-Deixo aqui disponível os códigos dos problemas resolvidos durante a disciplina de Algoritmos e Programação com Python no meu Github. Os códigos são referentes aos livros:
+#### Simulação em Hardware
+Ligar ou desligar um ventilador com base na temperatura:
+```c
+#include <stdio.h>
 
-- Fundamentos da Programação de Computadores, livro da Ana Fernanda Gomes 3º edição e;  
+int main() {
+    int temperatura = 30;
 
-- Introdução à Programação com Python 2º edição, livro do Nilo Ney Coutinho Menezes. 
+    if (temperatura > 25) {
+        printf("Temperatura alta! Ligando o ventilador.\n");
+    } else {
+        printf("Temperatura normal. Ventilador desligado.\n");
+    }
+    return 0;
+}
+```
+
+---
+
+### **6. Estruturas de Repetição**
+#### Explicação
+Executam um bloco de código repetidamente: `for`, `while`, `do-while`.
+
+#### Exemplo: Contagem de 1 a 10
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+```
+
+#### Simulação em Hardware
+Piscar um LED 5 vezes:
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("LED ligado!\n");
+        printf("LED desligado!\n");
+    }
+    return 0;
+}
+```
+
+---
+
+### **7. Funções**
+#### Explicação
+Reutilizam blocos de código para facilitar o desenvolvimento.
+
+#### Exemplo: Soma de dois números
+```c
+#include <stdio.h>
+
+int soma(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int resultado = soma(3, 7);
+    printf("A soma é: %d\n", resultado);
+    return 0;
+}
+```
+
+#### Simulação em Hardware
+Função para controlar o LED:
+```c
+#include <stdio.h>
+
+void ligar_led() {
+    printf("LED ligado!\n");
+}
+
+void desligar_led() {
+    printf("LED desligado!\n");
+}
+
+int main() {
+    ligar_led();
+    desligar_led();
+    return 0;
+}
+```
+
+---
+
+### **8. Vetores**
+#### Explicação
+Armazenam múltiplos valores de mesmo tipo.
+
+#### Exemplo: Exibir números de um vetor
+```c
+#include <stdio.h>
+
+int main() {
+    int numeros[5] = {1, 2, 3, 4, 5};
+    
+    for (int i = 0; i < 5; i++) {
+        printf("Número %d: %d\n", i + 1, numeros[i]);
+    }
+    return 0;
+}
+```
+
+#### Simulação em Hardware
+Controlar LEDs com base em um vetor:
+```c
+#include <stdio.h>
+
+int main() {
+    int estados[3] = {1, 0, 1};  // 1 = ligado, 0 = desligado
+    
+    for (int i = 0; i < 3; i++) {
+        if (estados[i] == 1) {
+            printf("LED %d ligado!\n", i + 1);
+        } else {
+            printf("LED %d desligado!\n", i + 1);
+        }
+    }
+    return 0;
+}
+```
+
+---
+
+Esses exemplos práticos fornecem uma introdução sólida para iniciantes e integram conceitos teóricos com aplicações simuladas em hardware. Se precisar de ajustes ou mais detalhes, é só avisar! 😊
