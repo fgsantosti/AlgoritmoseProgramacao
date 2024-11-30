@@ -117,15 +117,25 @@ Combinam expressões:
 #include <stdio.h>
 
 int main() {
-    int senha = 1234, entrada;
+    int senha_correta = 1234;  // Senha correta
+    int senha_entrada;        // Senha digitada pelo usuário
+    int botao_pressionado;    // Estado do botão: 1 = pressionado, 0 = não pressionado
+
+    // Solicita a senha do usuário
     printf("Digite a senha: ");
-    scanf("%d", &entrada);
-    
-    if (entrada == senha) {
-        printf("Acesso permitido!\n");
+    scanf("%d", &senha_entrada);
+
+    // Solicita o estado do botão
+    printf("O botão foi pressionado? (1 para Sim, 0 para Não): ");
+    scanf("%d", &botao_pressionado);
+
+    // Verifica as duas condições
+    if (senha_entrada == senha_correta && botao_pressionado == 1) {
+        printf("Acesso permitido! LED aceso.\n");
     } else {
-        printf("Senha incorreta.\n");
+        printf("Acesso negado. Verifique a senha ou pressione o botão.\n");
     }
+
     return 0;
 }
 ```
