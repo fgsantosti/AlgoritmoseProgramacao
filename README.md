@@ -269,6 +269,63 @@ int main() {
 }
 ```
 
+#### Simulação em Hardware
+Função para controlar o LED pelo usuário:
+```c
+#include <stdio.h>  // Biblioteca padrão para entrada e saída
+
+// Definições para simular os pinos dos LEDs
+#define LED1_PIN 2  // LED 1 conectado ao pino 2
+#define LED2_PIN 3  // LED 2 conectado ao pino 3
+
+int main() {
+    int estado_led1 = 0;  // Estado do LED 1 (0 = desligado, 1 = ligado)
+    int estado_led2 = 0;  // Estado do LED 2 (0 = desligado, 1 = ligado)
+    int escolha;          // Variável para armazenar a escolha do usuário
+
+    printf("Simulação de LEDs com estrutura condicional\n");
+    printf("Os LEDs estão conectados aos pinos %d e %d\n", LED1_PIN, LED2_PIN);
+
+    while (1) {  // Loop infinito para simular o controle dos LEDs
+        printf("\nEscolha uma ação:\n");
+        printf("1 - Ligar LED 1\n");
+        printf("2 - Desligar LED 1\n");
+        printf("3 - Ligar LED 2\n");
+        printf("4 - Desligar LED 2\n");
+        printf("5 - Sair\n");
+        printf("Digite sua escolha: ");
+        scanf("%d", &escolha);
+
+        // Estruturas condicionais para controlar os LEDs
+        if (escolha == 1) {
+            printf("Ligando LED 1...\n");
+            estado_led1 = 1;  // Altera o estado do LED 1 para ligado
+        } else if (escolha == 2) {
+            printf("Desligando LED 1...\n");
+            estado_led1 = 0;  // Altera o estado do LED 1 para desligado
+        } else if (escolha == 3) {
+            printf("Ligando LED 2...\n");
+            estado_led2 = 1;  // Altera o estado do LED 2 para ligado
+        } else if (escolha == 4) {
+            printf("Desligando LED 2...\n");
+            estado_led2 = 0;  // Altera o estado do LED 2 para desligado
+        } else if (escolha == 5) {
+            printf("Encerrando o programa...\n");
+            break;  // Encerra o loop e o programa
+        } else {
+            printf("Opção inválida! Tente novamente.\n");
+        }
+
+        // Exibe o estado atual dos LEDs
+        printf("Estado atual: LED 1 = %s, LED 2 = %s\n",
+               estado_led1 ? "Ligado" : "Desligado",
+               estado_led2 ? "Ligado" : "Desligado");
+    }
+
+    return 0;
+}
+```
+
 ---
 
 ### **8. Vetores**
