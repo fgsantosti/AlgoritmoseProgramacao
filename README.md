@@ -1,6 +1,3 @@
-Aqui está um conteúdo abrangente para introduzir **Algoritmos e Programação em C**, utilizando exemplos práticos e simples que simulam a utilização em uma placa como a Raspberry Pi Pico ou Arduino. Os tópicos incluem explicações seguidas de exemplos comentados.
-
----
 
 ### **1. Introdução a Algoritmos e Programação**
 #### O que é um Algoritmo?
